@@ -1,0 +1,57 @@
+<h3>Buscar Empleado</h3>
+<div class = "row">
+    <div class = "col-sm-4"></div>
+    <div class = "col-sm-4">
+        <label>Ingresar Id de Empleado:</label>
+            <input type = "text" [(ngModel)] = "id"/>
+        
+        <button type = "button" class="btn btn-success" (click) = "buscarEmpleado(id)" 
+            data-toggle = "modal" data-target = "#modalEmpleado">Buscar</button>
+        
+        <button type = "button" class = "btn btn-danger" (click) = "actualizarEmpleado()">
+            Actualizar
+        </button>
+            
+        
+    </div>
+    <div class = "col-sm-4"></div>
+</div>
+
+<div class = "modal" id = "modalEmpleado">
+    <div class = "modal-dialog">
+        <div class = "modal-content">
+            <div class = "modal-header">
+                <h4 class = "modal-title" style = "text-align: center">Empleado</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+            <div class = "modal-body">
+                <div class = "row">
+                    <div class = "col">
+                        <label style = "text-align: left">Nombre</label>
+                    </div>
+                    <div class = "col">
+                        <label style = "text-align: right">{{empleado.nombre}}</label>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col">
+                        <label style = "text-align: left">Email</label>
+                    </div>
+                    <div class = "col">
+                        <label style = "text-align: right">{{empleado.email}}</label>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col">
+                        <label style = "text-align: left">Sector</label>
+                    </div>
+                    <div class = "col">
+                        <label style = "text-align: right">{{empleado.sector}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

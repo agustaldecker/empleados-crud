@@ -1,0 +1,60 @@
+<h3>Crear Empleado</h3>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4" >
+    <div [hidden]="submitted" style="width: 400px;">
+      <form [formGroup]="empleadoSaveForm" #saveempleado (ngSubmit)="saveEmpleado()">
+          <div class="form-group">
+              <label for="empleado_nombre">Nombre Empleado</label>
+              <input type="text" class="form-control"  formControlName="empleado_nombre" data-toggle="tooltip" 
+                 data-placement="right" title="Ingresar Nombre de Empleado" >
+              <div class="alert alert-danger" *ngIf = "(EmpleadoNombre.touched) && (EmpleadoNombre.invalid)" 
+                style="margin-top: 5px;">
+                  <span *ngIf="EmpleadoNombre.errors.required">El nombre del empleado es requerido</span>
+                    <span *ngIf = "EmpleadoNombre.errors.minlength"> 
+                        Error: longitud mínima 3
+                    </span>                   
+                </div>
+          </div>
+  
+          <div class="form-group">
+              <label for="empleado_email">Email Empleado</label>
+              <input type="text" class="form-control" formControlName="empleado_email" 
+                data-toggle="tooltip" data-placement="right" title="Ingresar Email de Empleado">
+                <div class="alert alert-danger" *ngIf = "(EmpleadoEmail.touched) && (EmpleadoEmail.invalid)" 
+                style="margin-top: 5px;">
+                  <span *ngIf="EmpleadoEmail.errors.required">El Email del empleado es requerido</span>
+                    <span *ngIf = "EmpleadoEmail.errors.email"> 
+                        Formato de email inválido
+                    </span>                   
+                </div>
+          </div>
+  
+          <div class="form-group">
+              <label for="empleado_sector">Sector Empleado</label>
+                <select class="form-control" formControlName="empleado_sector" data-toggle="tooltip" 
+                      data-placement="right" title="Seleccionar Sector del Empleado">
+                    <option value="null">--Seleccionar Sector--</option>
+                  <option value="Ventas">Ventas</option>
+                  <option value="Mantenimiento">Mantenimiento</option>
+                  <option value="Calidad">Calidad</option>
+                  <option value="Administración">Administración</option>
+                </select>
+          </div>
+  
+          <button type="submit" class="btn btn-success">Ingresar</button>
+      </form>
+  </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+      <div [hidden]="!submitted">
+         <h4>Empleado agregado correctamente!</h4>
+         <button (click)="addEmpleadoForm()" class='btn btn-primary'>Agregar otro empleado</button>
+      </div>      
+  </div>
+  <div class="col-sm-4"></div>
+</div>

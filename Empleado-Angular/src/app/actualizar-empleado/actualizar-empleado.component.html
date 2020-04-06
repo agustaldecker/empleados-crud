@@ -1,0 +1,24 @@
+<h3>Actualizar Empleado</h3>
+<div class = "row">
+    <div class = "col-sm-4"></div>
+    <div class = "col-sm-4">
+        <label for = "id">Ingresar Id de Empleado:</label>
+            <input type = "text" id = "id" [(ngModel)] = "id"/>
+
+        <label for = "nombre">Ingresar Nombre de Empleado</label>
+        <input type = "text" id = "nombre" [(ngModel)] = "nombre"/>
+
+        <label for = "email">Ingresar Email de Empleado</label>
+        <input type = "text" id = "email" [(ngModel)] = "email"/>
+
+        <label for = "sector">Ingresar Sector de Empleado</label>
+        <input type = "text" id = "sector" [(ngModel)] = "sector"/>
+             
+        <button type = "button" class = "btn btn-danger" (click) = "actualizarEmpleado()">
+            Actualizar
+        </button>
+            
+        
+    </div>
+    <div class = "col-sm-4"></div>
+</div>
